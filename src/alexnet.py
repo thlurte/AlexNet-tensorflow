@@ -4,16 +4,14 @@ import tensorflow.keras.layers as tfl
 import tensorflow.nn as tfn
 
 class AlexNet:
-  def __init__(self,path):
-    # Dataset Directory
-    self.path=path
+  def __init__(self,input_size,batch_size):
 
     # Image Input Size
-    self.input_size=(256,256,3)
+    self.input_size=input_size
 
 
     # Batch Size
-    self.batch_size=128
+    self.batch_size=batch_size
 
     # Hyperparameters
     # Filters
@@ -304,7 +302,9 @@ class AlexNet:
         ,metrics=['accuracy']
     )
 
-  def fit(self,model,trainds,testds,batch_size,epochs):
+    return model
+
+  def fit(self,model,trainds,testds,epochs):
 
     history=model.fit(
         trainds
@@ -313,6 +313,7 @@ class AlexNet:
         ,validation_data=testds
         ,verbose=2
     )
+    return history
 
 
 
