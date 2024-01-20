@@ -75,3 +75,7 @@ The model uses stochastic gradient descent with a batch size of 128 samples, mom
 Weights are initialized in each layer from a zero-mean Gaussian distribution with standard deviation 0.01.
 
 Bias intializer in second, forth and fifth convolutional layers as well as in the fully-connected layer is 1. Remaining layers are intialized with the constant of 0.
+
+## References
+- [AlexNet Implementation by paniabhisek](https://github.com/paniabhisek/AlexNet)
+- [AlexNet Paper](http://paperswithcode.com/paper/alexnet)
